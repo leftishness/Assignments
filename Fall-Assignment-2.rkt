@@ -46,4 +46,16 @@
 ; problem 4
 (define walk-symbol
   (lambda (x s)
-    
+    (cond
+      [(assv x s) (walk-symbol (cdr (assv x s)) s)]
+      [else x])))
+
+;(walk-symbol 'a '((a . 5)))
+;(walk-symbol 'a '((b . c) (a . b)))
+;(walk-symbol 'a '((a . 5) (b . 6) (c . a)))
+;(walk-symbol 'c '((a . 5) (b . (a . c)) (c . a)))
+;(walk-symbol 'b '((a . 5) (b . ((c . a))) (c . a)))
+;(walk-symbol 'd '((a . 5) (b . (1 2)) (c . a) (e . c) (d . e)))
+;(walk-symbol 'd '((a . 5) (b . 6) (c . f) (e . c) (d . e)))
+
+; problem 5
