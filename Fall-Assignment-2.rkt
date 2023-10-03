@@ -45,5 +45,5 @@
 
 ; problem 4
 (define walk-symbol
-  (lambda (x lst)
+  (lambda (x s)
     
