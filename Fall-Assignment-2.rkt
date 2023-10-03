@@ -15,3 +15,16 @@
 ;(list-ref '(a b c) 0)
 
 ; problem 2
+(define union
+  (lambda (lst1 lst2)
+    (cond
+      [(null? lst2) lst1]
+      [(memv (car lst2) lst1) (union lst1 (cdr lst2))]
+      [else (cons (car lst2) (union lst1 (cdr lst2)))])))
+
+;(union '() '())
+;(union '(x) '())
+;(union '(x) '(x))
+;(union '(x y) '(x z))
+
+; problem 3
