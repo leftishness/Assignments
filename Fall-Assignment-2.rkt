@@ -28,3 +28,22 @@
 ;(union '(x y) '(x z))
 
 ; problem 3
+(define stretch
+  (lambda (func n)
+    (lambda (x)
+      (cond
+        [(= x n) (not (func n))]
+        [else (func x)]))))
+
+;((stretch even? 1) 0)
+;((stretch even? 1) 1)
+;((stretch even? 1) 2)
+;((stretch even? 1) 3)
+;(filter (stretch even? 1) '(0 1 2 3 4 5))
+;(filter (stretch (stretch even? 1) 3) '(0 1 2 3 4 5))
+;(filter (stretch (stretch (stretch even? 1) 3) 7) '(0 1 2 3 4 5))
+
+; problem 4
+(define walk-symbol
+  (lambda (x lst)
+    
